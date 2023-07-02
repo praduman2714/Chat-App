@@ -1,0 +1,6 @@
+.messageArea{
+    width: 100%;
+    /* background-color: brown; */
+    height: 75%;
+    border: 1px solid red;
+}
