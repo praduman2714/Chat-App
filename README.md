@@ -1,3 +1,18 @@
+# Description
+
+ - Used ReactJs to make this Single Page Application.
+ - Used hook for the state variable.
+ - Used CSS for description.
+
+# Functionality
+
+ - A simple group chat app, in which a user is generated randomly for sending messages.
+ - The user can enter a message in the input box and send it to the chat.
+ - The message will be displayed in the chat area, with the username and a heart icon for likes.
+ - Each message is assigned a random username from a predefined list.
+ - Users can like messages by clicking the heart icon, and the like count will be updated in real-time.
+ - The chat area automatically scrolls to the latest message.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
