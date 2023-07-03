@@ -1,5 +1,6 @@
 # Description
 
+ - The basic chat-app for chatting among friends.
  - Used ReactJs to make this Single Page Application.
  - Used hook for the state variable.
  - Used CSS for description.
