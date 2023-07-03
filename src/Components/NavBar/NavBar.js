@@ -1,6 +1,9 @@
+// Importing style 
 import style from './NavBar.module.css';
 
+// Returing the functon
 function NavBar(){
+    // Return the UI
     return(
         <>
             <nav className={style.navBar}>

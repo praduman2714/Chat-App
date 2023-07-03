@@ -1,7 +1,7 @@
 .navBar{
     display: flex;
     /* flex-direction: column; */
-    background-color: #000;
+    background-color: #0c0c0ccc;
     color: #fff;
     justify-content: space-between;
 }

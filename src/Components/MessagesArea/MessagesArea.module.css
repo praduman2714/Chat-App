@@ -1,6 +1,63 @@
-.messageArea{
-    width: 100%;
-    /* background-color: brown; */
-    height: 75%;
-    border: 1px solid red;
+.messageArea {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  height: 70%;
+  overflow-y: auto; /* Added scrollable overflow for the container */
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  word-wrap: break-word; /* Added word wrapping for long usernames */
+}
+
+.username {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.message {
+  display: inline-flex;
+  max-width: 70%;
+  padding: 8px 12px;
+  border-radius: 5px;
+  width: 100%;
+  justify-content: flex-start;
+  margin-left: 20px;
+  background-color: #e5e5e5;
+  word-wrap: break-word; /* Added word wrapping for long messages */
+}
+
+.message:nth-child(even) {
+  background-color: #e9ffea;
+}
+
+.messageContent {
+  word-wrap: break-word;
+}
+
+.likes {
+  display: flex;
+  align-items: center; /* Vertically aligns the like icon and count */
+}
+
+.likes img {
+  width: 20px;
+  margin-left: 10px; /* Reduced the margin */
+  margin-right: 5px; /* Reduced the margin */
+}
+.messageArea::-webkit-scrollbar {
+  width: 8px; /* Width of the scroll bar */
+  background-color: transparent; /* Background color of the scroll bar track */
+}
+
+.messageArea::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scroll bar thumb */
+  border-radius: 4px; /* Rounded corners of the scroll bar thumb */
+}
+
+.messageArea::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color of the scroll bar thumb on hover */
 }

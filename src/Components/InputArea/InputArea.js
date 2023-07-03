@@ -1,43 +1,49 @@
+// Using Dependencies form the react
 import { useRef, useState } from 'react';
+// Importing the components
 import MessagesArea from '../MessagesArea/MessagesArea';
 import style from './InputArea.module.css';
 
+// Function for Input Area
 function InputArea() {
-    const user_list = ["Alan", "Bob", "Carol", "Dean", "Elin"];
+  const user_list = ["Alan", "Bob", "Carol", "Dean", "Elin"];
 
-    const messageRef = useRef();
+  // Using message ref for the typing in the input sectino
+  const messageRef = useRef();
 
-    const [message, setMessage] = useState(null);
+  // Using state variable for messages
+  const [message, setMessage] = useState([]);
 
-    function handleRemove(){
-        messageRef.current.value = "";
+  // function for removing from the messages ref
+  function handleRemove() {
+    messageRef.current.value = "";
+  }
+  // function for handleSubmit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const messageText = messageRef.current.value;
+    const sender = user_list[Math.floor(Math.random() * user_list.length)];
+
+    if (messageText.trim() !== "") {
+      const newChat = {
+        username: sender,
+        message: messageText
+      };
+
+      setMessage(prevMessage => [...prevMessage, newChat]);
     }
-
-    function handleSubmit(e){
-        e.preventDefault();
-        const message = messageRef.current.value;
-        const sender = user_list[Math.floor(Math.random() * user_list.length)];
-
-        if(message.trim() !== ""){
-            const newChat = {
-                user : sender,
-                message
-            };
-
-            setMessage([...message, newChat]);
-        }
-        handleRemove();
-    }
-
-    return (
-        <>
-            <MessagesArea message = {message} />
-            <form onSubmit={handleSubmit} className={style.inputArea}>
-                <input type='text' className={style.input} ref={messageRef}  />
-                <button>Send</button>
-            </form>
-        </>
-    )
+    handleRemove();
+  }
+  // Returning the UI
+  return (
+    <>
+      <MessagesArea messages={message} />
+      <form onSubmit={handleSubmit} className={style.inputArea}>
+        <input type='text' className={style.input} placeholder='Enter the text...' ref={messageRef} />
+        <button>Send</button>
+      </form>
+    </>
+  )
 }
 
 export default InputArea;
